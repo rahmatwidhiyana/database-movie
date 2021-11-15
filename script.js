@@ -37,7 +37,7 @@
 const searchButton = document.querySelector('.search-button');
 searchButton.addEventListener('click', function () {
   const inputKeyword = document.querySelector('.input-keyword');
-  fetch('http://www.omdbapi.com/?=&apikey=2d72c9e4&s=' + inputKeyword.value)
+  fetch('https://www.omdbapi.com/?=&apikey=2d72c9e4&s=' + inputKeyword.value)
     .then((response) => response.json())
     .then((response) => {
       const movies = response.Search;
@@ -53,7 +53,7 @@ searchButton.addEventListener('click', function () {
       modalDetailButton.forEach((btn) => {
         btn.addEventListener('click', function () {
           const imdbid = this.dataset.imdbid;
-          fetch('http://www.omdbapi.com/?=&apikey=2d72c9e4&i=' + imdbid)
+          fetch('https://www.omdbapi.com/?=&apikey=2d72c9e4&i=' + imdbid)
             .then((response) => response.json())
             .then((m) => {
               const movieDetail = showMovieDetail(m);
